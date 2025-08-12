@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/stayl.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+
+</head>
+
+<body>
+
+  <!-- <header>===header===</header> -->
+  <!-- <header id="hed">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-ld-4 col-md-6 d-none d-md-inline-block">
+          <i class="bi bi-clock"></i>Monday - Saturday, 8AM to 10PM
+        </div>
+
+        <div class="col-ld-12 col-md-6 d-md-inline-block text-center text-md-end">
+          <i class="bi bi-phone"></i>Call us now +1 5589 55488 55
+        </div>
+      </div>
+    </div>
+  </header> -->
+  <!-- <nav>===nav===</nav> -->
+  <section class="position-sticky sticky-top w-100 nev-1">
+    <div class="container  p-0">
+      <nav class="navbar navbar-expand-xl bg-body-tertiary">
+        <div class="d-flex justify-content-sm-between w-100 p-0">
+          <a class="navbar-brand" href="#">
+            <img src="img/logo.png" alt="">
+          </a>
+          <button class="navbar-toggler " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav justify-content-sm-between ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">Departments</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#Doctors">Doctors</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-auto-close="false" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown button</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">dropdown1</a></li>
+                  <li class="dropstart">
+                    <a class=" dropdown-toggle nav-link" data-bs-auto-close="false" type="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      Deep Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown dropstart"><a class="dropdown-item" href="#">dropdown 1</a></li>
+                      <li><a class="dropdown-item" href=""> dropdown 2</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="#">dropdown2 </a></li>
+                  <li><a class="dropdown-item" href="#">dropdown 3</a></li>
+                  <li><a class="dropdown-item" href="#">dropdown4 </a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#Contact">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Departments</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#Doctors">Doctors</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Dropdown
+                      </a>
+
+                      <ul class="dropdown-menu dropstart">
+                        <li><a class="dropdown-item " data-bs-toggle="dropdown-submenu" href="#">dropdown1</a></li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-item dropdown-toggle ">deep dropdown</a>
+                          <ul class="dropdown-menu dropdown-submenu dropstart">
+                            <li><a class="dropdown-item" href="#">dropdown2</a></li>
+                            <li><a class="dropdown-item" href="#">dropdown3</a></li>
+                            <li><a class="dropdown-item" href="#">dropdown4</a></li>
+                          </ul>
+                        </li>
+
+                        <li><a class="dropdown-item" href="#">dropdown2</a></li>
+                        <li><a class="dropdown-item" href="#">dropdown3</a></li>
+                        <li><a class="dropdown-item" href="#">dropdown4</a></li>
+
+                      </ul>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#Contact">Contact</a>
+                    </li>
+                  </ul>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <a href="#APPOINTMENT" class="btn text-wrap nev-btn">Make an Appointment</a>
+        </div>
+      </nav>
+    </div>
+  </section>
+  <!-- <section>===1===</section> -->
+  <section class="sec-1">
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active btn"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" class=" btn" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" class=" btn" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/hero-carousel/hero-carousel-1.jpg" class="d-block w-100 " alt="...">
+          <div class="carousel-caption d-block">
+            <div class="container">
+              <h5>Welcome to Medicio</h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
+
+              </p>
+              <a href="#about" class="btn-get-started">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/hero-carousel/hero-carousel-2.jpg" class="d-block w-100 " alt="...">
+          <div class="carousel-caption  d-block">
+            <div class="container">
+              <h5>At vero eos et accusamus</h5>
+              <p>
+                Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+                placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem
+                quibusdam et aut officiis debitis aut.
+              </p>
+              <a href="#about" class="btn-get-started">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/hero-carousel/hero-carousel-3.jpg" class="d-block w-100 " alt="...">
+          <div class="carousel-caption  d-block">
+            <div class="container">
+              <h5>Temporibus autem quibusdam</h5>
+              <p>Temporibus autem quibusdam
+                Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus
+                error sit voluptatem accusantium.</p>
+              <a href="#about" class="btn-get-started">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <div class=" sec1-i-bg-l">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </div>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <div class="sec1-i-bg-r"> <span class="carousel-control-next-icon" aria-hidden="true"></span></div>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  <!-- <section>===2===</section> -->
+  <section class="sec-2" id="sec2">
+    <div class="container px-0">
+      <div class="row gx-lg-3 gy-md-3 gx-md-3 gy-3">
+        <div class="col-lg-3 col-md-6">
+          <div class="sec-2-div">
+            <div class="sec2-in-div"></div>
+            <i class="fa-solid fa-heart-pulse"></i>
+            <p class="h4">Lorem, ipsum.</p>
+            <p>
+              Voluptatum deleniti atque corrupti quos dolores et quas
+              molestias excepturi
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="sec-2-div">
+            <div class="sec2-in-div"></div>
+            <i class="fa-solid fa-pills"></i>
+            <p class="h4">Lorem, ipsum.</p>
+            <p>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="sec-2-div">
+            <div class="sec2-in-div"></div>
+            <i class="fa-solid fa-thermometer"></i>
+            <p class="h4">Lorem, ipsum.</p>
+            <p>
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="sec-2-div">
+            <div class="sec2-in-div"></div>
+            <i class="fa-solid fa-dna"></i>
+            <p class="h4">Lorem, ipsum.</p>
+            <p>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section>===3===</section> -->
+  <section class="sec-3">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-10">
+          <div class="text-center">
+            <h3 class="text-light">In an emergency? Need help now?</h3>
+            <p class="pb-3 text-light">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum.
+            </p>
+            <a href="#APPOINTMENT" class="rounded-1 btn">Make an Appointment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section>===4===</section> -->
+  <section class="sec-4" id="about">
+    <div class="container sec4-con1">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2>About Us</h2>
+          <p>
+            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+            consectetur velit
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container sec4-con2">
+      <div class="row gy-4">
+        <div class="col-lg-6 position-relative">
+          <img class="" src="img/about.jpg" alt="" />
+          <div class="icon-pos translate-middle border rounded-circle border-0">
+            <div class="icon-div position-absolute translate-middle border rounded-circle border-0">
+              <i class="fa-solid fa-play position-absolute translate-middle"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h3>
+            Voluptatem dignissimos provident quasi corporis voluptates sit
+            assumenda.
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <ul class="p-0">
+            <li class="">
+              <i class="bi bi-check2-all"></i>
+              <span>Ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.</span>
+            </li>
+            <li class="">
+              <i class="bi bi-check2-all"></i>
+              <span>Duis aute irure dolor in reprehenderit in voluptate
+                velit.</span>
+            </li>
+            <li class="">
+              <i class="bi bi-check2-all"></i>
+              <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                aute irure dolor in reprehenderit in voluptate trideta
+                storacalaperda mastiro dolore eu fugiat nulla pariatur.</span>
+            </li>
+          </ul>
+          <p>
+            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            irure dolor in reprehenderit in voluptate velit esse cillum dolore
+            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section>===5===</section> -->
+  <section class="sec-5">
+    <div class="container px-0">
+      <div class="row gx-lg-3 gy-md-3 gx-md-3 gy-3">
+        <div class="col-lg-3 col-md-6">
+          <div class="sec-5-div d-flex">
+            <i class="fa-solid fa-user-doctor align-content-center me-3"></i>
+            <div class="sec5-t">
+              <span class="spc">25</span>
+              <p>Doctors</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="sec-5-div d-flex">
+            <i class="fa-regular fa-hospital align-content-center me-3"></i>
+            <div class="sec5-t">
+              <span class="spc1">15</span>
+              <p>Departments</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="sec-5-div d-flex">
+            <i class="fa-solid fa-flask me-3 align-content-center"></i>
+            <div class="sec5-t">
+              <span class="spc2">8</span>
+              <p>Research Labs</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="sec-5-div d-flex">
+            <i class="fa-solid fa-award align-content-center me-3"></i>
+            <div class="sec5-t">
+              <span class="spc3">150</span>
+              <p>Awards</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section>===6===</section> -->
+  <section class="sec-6">
+    <div class="container">
+      <div class="row d-flex justify-content-around">
+        <div class="col-lg-6 col-md-12 position-relative">
+          <img src="img/features.jpg" class="img-fluid d-block w-100 h-100 object-fit-cover z-1" />
+        </div>
+        <div class="col-lg-6 col-md-12 mt-lg-0 mt-md-5 mt-sm-5">
+          <div class="row">
+            <div class="col-12">
+              <h3 id="sec6-h3">
+                Enim quis est voluptatibus aliquid consequatur fugiat
+              </h3>
+            </div>
+
+            <div class="col-12">
+              <p>
+                Esse voluptas cumque vel exercitationem. Reiciendis est hic
+                accusamus. Non ipsam et sed minima temporibus laudantium.
+                Soluta voluptate sed facere corporis dolores excepturi
+              </p>
+            </div>
+            <div class="col-12 d-flexmt-3">
+              <div class="d-tex">
+                <i class="fa-solid fa-hand-holding-medical align-items-center icon"></i>
+                <div class="text">
+                  <h4>
+                    <a href="" class="text-decoration-none text-secondary">Lorem ipsum</a>
+                  </h4>
+                  <p>
+                    Voluptatum deleniti atque corrupti quos dolores et quas
+                    molestias excepturi sint occaecati cupiditate non
+                    provident
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 d-flex mt-3">
+              <div class="d-tex">
+                <i class="fa-solid fa-suitcase-medical align-items-center icon"></i>
+                <div class="text">
+                  <h4>
+                    <a href="" class="text-decoration-none text-secondary">Lorem ipsum</a>
+                  </h4>
+                  <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus
+                    qui blanditiis praesentium voluptatum deleniti atque
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 d-flex mt-3">
+              <div class="d-tex">
+                <i class="fa-solid fa-staff-snake align-items-center icon"></i>
+                <div class="text">
+                  <h4>
+                    <a href="" class="text-decoration-none text-secondary">Lorem ipsum</a>
+                  </h4>
+                  <p>
+                    Explicabo est voluptatum asperiores consequatur magnam. Et
+                    veritatis odit. Sunt aut deserunt minus aut eligendi omnis
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 d-flex mt-3">
+              <div class="d-tex">
+                <i class="fa-solid fa-lungs align-items-center icon"></i>
+                <div class="text">
+                  <h4>
+                    <a href="" class="text-decoration-none text-secondary">Lorem ipsum</a>
+                  </h4>
+                  <p>
+                    Est voluptatem labore deleniti quis a delectus et. Saepe
+                    dolorem libero sit non aspernatur odit amet. Et eligendi
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section>===7===</section> -->
+  <section class="sec-7" id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center sec7d1">
+            <h2 class="position-relative mb-4 pb-4">Services</h2>
+            <p class="mb-5 pb-5">
+              Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+              consectetur velit
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 text-center">
+          <div class="sec7-hover">
+            <div class="icon"><i class="fas fa-heartbeat mb-5"></i></div>
+            <h3 class="position-relative mb-3 pb-3">
+              <a class="text-decoration-none sec7-a" href="">Nesciunt Mete</a>
+            </h3>
+            <p>
+              Provident nihil minus qui consequatur non omnis maiores. Eos
+              accusantium minus dolores iure perferendis tempore et
+              consequatur.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center">
+          <div class="sec7-hover">
+            <div class="icon"><i class="fas fa-pills mb-5"></i></div>
+            <h3 class="position-relative mb-3 pb-3">
+              <a class="text-decoration-none sec7-a" href="">Eosle Commodi</a>
+            </h3>
+            <p>
+              Ut autem aut autem non a. Sint sint sit facilis nam iusto sint.
+              Libero corrupti neque eum hic non ut nesciunt dolorem.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center">
+          <div class="sec7-hover">
+            <div class="icon"><i class="fas fa-hospital-user mb-5"></i></div>
+            <h3 class="position-relative mb-3 pb-3">
+              <a class="text-decoration-none sec7-a" href="">Ledo Markt</a>
+            </h3>
+            <p>
+              Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus
+              ea aut. Vel qui id voluptas adipisci eos earum corrupti.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center">
+          <div class="sec7-hover">
+            <div class="icon"><i class="fas fa-dna mb-5"></i></div>
+            <h3 class="position-relative mb-3 pb-3">
+              <a class="text-decoration-none sec7-a" href="">Asperiores Commodit</a>
+            </h3>
+            <p>
+              Non et temporibus minus omnis sed dolor esse consequatur.
+              Cupiditate sed error ea fuga sit provident adipisci neque.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center">
+          <div class="sec7-hover">
+            <div class="icon"><i class="fas fa-wheelchair mb-5"></i></div>
+            <h3 class="position-relative mb-3 pb-3">
+              <a class="text-decoration-none sec7-a" href="">Velit Doloremque</a>
+            </h3>
+            <p>
+              Cumque et suscipit saepe. Est maiores autem enim facilis ut aut
+              ipsam corporis aut. Sed animi at autem alias eius labore.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center">
+          <div class="sec7-hover">
+            <div class="icon">
+              <i class="fas fa-notes-medical mb-5"></i>
+              <h3 class="position-relative mb-3 pb-3">
+                <a class="text-decoration-none sec7-a" href="">Dolori Architecto</a>
+              </h3>
+              <p>
+                Hic molestias ea quibusdam eos. Fugiat enim doloremque aut
+                neque non et debitis iure. Corrupti recusandae ducimus enim.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row">
+          
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- <section>===8===</section> -->
+  <section class="sec-8" id="APPOINTMENT">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="sec8-hed text-center">
+            <h2 class="position-relative mb-4 pb-4">MAKE AN APPOINTMENT</h2>
+            <p class="mb-5">
+              Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+              consectetur velit
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form action="" class="form-range">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 form-group mt-3 mt-md-0">
+            <input type="text" class="form-control" placeholder="Your Name" />
+          </div>
+          <div class="col-lg-4 form-group mt-3 mt-md-0">
+            <input type="email" class="form-control" placeholder="Your Email" />
+          </div>
+          <div class="col-lg-4 form-group mt-3 mt-md-0">
+            <input type="text" class="form-control" placeholder="Number" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 form-group mt-3 mt-md-0">
+            <input class="form-control" type="date" placeholder="" />
+          </div>
+          <div class="col-lg-4 form-group mt-3 mt-md-0">
+            <select class="form-select" name="department" id="department" required>
+              <option value>Select Department</option>
+              <option value="Department 1">Department 1</option>
+              <option value="Department 1">Department 2</option>
+              <option value="Department 1">Department 3</option>
+            </select>
+          </div>
+          <div class="col-lg-4 form-group mt-3 mt-md-0">
+            <select class="form-select" name="department" id="department" required>
+              <option value>Select Department</option>
+              <option value="Department 1">Department 1</option>
+              <option value="Department 1">Department 2</option>
+              <option value="Department 1">Department 3</option>
+            </select>
+          </div>
+        </div>
+        <div class="from-gr">
+          <textarea name="" id="" class="form-control" placeholder="Messag(Optional)"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn">Make an Appointment</button>
+        </div>
+      </div>
+    </form>
+  </section>
+  <!-- <section>===9===</section> -->
+  <section class="sec-9">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12">
+          <h2 class="mb-3 pb-3">Departments</h2>
+        </div>
+        <div class="col-12 pb-3 mb-3">
+          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="d-flex align-items-start row">
+        <div class="col-lg-3">
+          <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
+              type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Cardiology</button>
+            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
+              type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Neurology</button>
+            <button class="nav-link" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled"
+              type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false">Hepatology</button>
+            <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages"
+              type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Pediatrics</button>
+            <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
+              type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Ophthalmologists</button>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active " id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
+              tabindex="0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8 order-2 order-lg-1">
+                    <h3>Cardiology</h3>
+                    <p>Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta
+                      paulona marka</p>
+                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa
+                      odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni
+                      nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                  </div>
+                  <div class="col-lg-4  order-1 order-lg-2">
+
+                    <img src="img/departments-1.jpg" class="img-fluid" alt="">
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
+              tabindex="0">
+              <div class="container">
+                <div class="row gx-4">
+                  <div class="collg-lg-8 order-2 order-lg-1">
+                    <h3>Neurology</h3>
+                    <p>Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta
+                      paulona marka</p>
+                    <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt
+                      est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque
+                      beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+                  </div>
+                  <div class="collg-lg-4 order-1 order-lg-1">
+                    <img src="img/departments-2.jpg" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab"
+              tabindex="0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8 order-2 order-lg-1">
+                    <h3>Hepatology</h3>
+                    <p>Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta
+                      dolor et. In asperiores velit quaerat perferendis aut</p>
+                    <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque
+                      necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum
+                      odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                  </div>
+                  <div class="col-lg-4 order-1 order-lg-2">
+                    <img src="img/departments-3.jpg" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
+              tabindex="0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8 order-2 order-lg-1">
+                    <h3>Pediatrics</h3>
+                    <p>Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
+                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam
+                      fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores
+                      sed qui veritatis aperiam quia a laborum inventore</p>
+                  </div>
+                  <div class="col-lg-4 order-1 order-lg-2">
+                    <img src="img/departments-4.jpg" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
+              tabindex="0">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8 order-2 order-lg-1">
+                    <h3>Ophthalmologists
+                    </h3>
+                    <p>Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
+                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut
+                      quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae
+                      molestiae voluptate vel</p>
+                  </div>
+                  <div class="col-lg-4 order-1 order-lg-2">
+                    <img src="img/departments-5.jpg" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section>===10===</section> -->
+  <section class="sec-10">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="mb-3 pb-3">Testimonials</h2>
+        </div>
+        <div class="col-12">
+          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="container">
+      <div class="row slider4">
+        <div class="col-lg-4  slide">
+          <div class="card border">
+            <div class="card-body position-relative ">
+              <p>
+                <i class="fa-solid fa-quote-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <i class="fa-solid fa-quote-right"></i>
+              </p>
+              <div class="sec-10img">
+                <img src="img/testimonials/testimonials-1.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="sec10-text">
+            <h3>Saul Goodman</h3>
+            <h4>Ceo & Founder</h4>
+          </div>
+        </div>
+        <div class="col-lg-4  slide">
+          <div class="card border">
+            <div class="card-body position-relative ">
+              <p>
+                <i class="fa-solid fa-quote-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <i class="fa-solid fa-quote-right"></i>
+              </p>
+              <div class="sec-10img">
+                <img src="img/testimonials/testimonials-2.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="sec10-text">
+            <h3>Saul Goodman</h3>
+            <h4>Ceo & Founder</h4>
+          </div>
+        </div>
+        <div class="col-lg-4  slide">
+          <div class="card border">
+            <div class="card-body position-relative ">
+              <p>
+                <i class="fa-solid fa-quote-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <i class="fa-solid fa-quote-right"></i>
+              </p>
+              <div class="sec-10img">
+                <img src="img/testimonials/testimonials-3.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="sec10-text">
+            <h3>Saul Goodman</h3>
+            <h4>Ceo & Founder</h4>
+          </div>
+        </div>
+        <div class="col-lg-4  slide">
+          <div class="card border">
+            <div class="card-body position-relative ">
+              <p>
+                <i class="fa-solid fa-quote-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <i class="fa-solid fa-quote-right"></i>
+              </p>
+              <div class="sec-10img">
+                <img src="img/testimonials/testimonials-4.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="sec10-text">
+            <h3>Saul Goodman</h3>
+            <h4>Ceo & Founder</h4>
+          </div>
+        </div>
+        <div class="col-lg-4  slide">
+          <div class="card border">
+            <div class="card-body position-relative ">
+              <p>
+                <i class="fa-solid fa-quote-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <i class="fa-solid fa-quote-right"></i>
+              </p>
+              <div class="sec-10img">
+                <img src="img/testimonials/testimonials-5.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="sec10-text">
+            <h3>Saul Goodman</h3>
+            <h4>Ceo & Founder</h4>
+          </div>
+        </div>
+        <div class="col-lg-4  slide">
+          <div class="card border">
+            <div class="card-body position-relative ">
+              <p>
+                <i class="fa-solid fa-quote-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <i class="fa-solid fa-quote-right"></i>
+              </p>
+              <div class="sec-10img">
+                <img src="img/testimonials/testimonials-5.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="sec10-text">
+            <h3>Saul Goodman</h3>
+            <h4>Ceo & Founder</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+  <!-- <section>===11===</section> -->
+  <section class="sec-11" id="Doctors">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="mb-3 pb-3">Doctors</h2>
+        </div>
+        <div class="col-12">
+          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="shadow-sm position-relative sec11-doc">
+            <div class="text-center socal">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+            <img src="img/doctors/doctors-1.jpg" alt="">
+            <div class="docter-info">
+              <h4>Walter White</h4>
+              <span>Chief Medical Officer</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="shadow-sm position-relative sec11-doc">
+            <div class="text-center socal">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+            <img src="img/doctors/doctors-2.jpg" alt="">
+            <div class="docter-info">
+              <h4>Sarah Jhonson</h4>
+              <span>Anesthesiologist</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="shadow-sm position-relative sec11-doc">
+            <div class="text-center socal">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+            <img src="img/doctors/doctors-3.jpg" alt="">
+            <div class="docter-info">
+              <h4>William Anderson</h4>
+              <span>Cardiology</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="shadow-sm position-relative sec11-doc">
+            <div class="text-center socal">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+            <img src="img/doctors/doctors-4.jpg" alt="">
+            <div class="docter-info">
+              <h4>Amanda Jepson</h4>
+              <span>Neurosurgeon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section>===12===</section> -->
+  <section class="sec-12">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="mb-3 pb-3">Gallery</h2>
+        </div>
+        <div class="col-12">
+          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row slider5">
+        <div class="col-2 slide sec12-img"><img src="img/gallery/gallery-1.jpg" class="img-fluid" alt="logo"></div>
+        <div class="col-2 slide sec12-img"><img src="img/gallery/gallery-2.jpg" class="img-fluid" alt="logo"></div>
+        <div class="col-2 slide sec12-img"><img src="img/gallery/gallery-3.jpg" class="img-fluid" alt="logo"></div>
+        <div class="col-2 slide sec12-img"><img src="img/gallery/gallery-4.jpg" class="img-fluid" alt="logo"></div>
+        <div class="col-2 slide sec12-img"><img src="img/gallery/gallery-5.jpg" class="img-fluid" alt="logo"></div>
+        <div class="col-2 slide sec12-img"><img src="img/gallery/gallery-6.jpg" class="img-fluid" alt="logo"></div>
+        <div class="col-2 slide sec12-img"><img src="img/gallery/gallery-7.jpg" class="img-fluid" alt="logo"></div>
+        <div class="col-2 slide sec12-img"><img src="img/gallery/gallery-8.jpg" class="img-fluid" alt="logo"></div>
+      </div>
+    </div>
+  </section>
+  <!-- <section>===13===</section> -->
+  <section class="sec-13">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12">
+          <h2 class="pb-3 mb-3">Pricing</h2>
+        </div>
+        <div class="col-12">
+          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 text-center">
+          <div class="sec13-div">
+            <h3>Free</h3>
+            <h4><sup>$</sup>0<span>/month</span></h4>
+            <ul class="text-center">
+              <li>Aida dere</li>
+              <li>Nec feugiat nisl</li>
+              <li>Nulla at volutpat dola</li>
+              <li class="na">Pharetra massa</li>
+              <li class="na">Massa ultricies mi</li>
+            </ul>
+            <div class="btn-wrap">
+              <a href="" class="buy-now">Buy Now</a>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-3 text-center">
+          <div class="sec13-div">
+            <h3 class="sec13-h3-bg">Business</h3>
+            <h4><sup>$</sup>19<span>/month</span></h4>
+            <ul class="text-center">
+              <li>Aida dere</li>
+              <li>Nec feugiat nisl</li>
+              <li>Nulla at volutpat dola</li>
+              <li>Pharetra massa</li>
+              <li class="na">Massa ultricies mi</li>
+            </ul>
+            <div class="btn-wrap">
+              <a href="" class="buy-now">Buy Now</a>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-3 text-center">
+          <div class="sec13-div">
+            <h3>Developer</h3>
+            <h4><sup>$</sup>29<span>/month</span></h4>
+            <ul class="text-center">
+              <li>Aida dere</li>
+              <li>Nec feugiat nisl</li>
+              <li>Nulla at volutpat dola</li>
+              <li>Pharetra massa</li>
+              <li>Massa ultricies mi</li>
+            </ul>
+            <div class="btn-wrap">
+              <a href="" class="buy-now">Buy Now</a>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-3 text-center">
+          <div class="position-relative sec13-div">
+            <span class="span">Advanced</span>
+            <h3>Ultimate</h3>
+            <h4><sup>$</sup>49<span>/month</span></h4>
+            <ul class="text-center">
+              <li>Aida dere</li>
+              <li>Nec feugiat nisl</li>
+              <li>Nulla at volutpat dola</li>
+              <li>Pharetra massa</li>
+              <li>Massa ultricies mi</li>
+            </ul>
+            <div class="btn-wrap">
+              <a href="" class="buy-now">Buy Now</a>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section>===14===</section> -->
+  <section class="sec-14">
+    <div class="container sec14-1div">
+      <div class="row text-center">
+        <div class="col-12">
+          <h2 class="position-relative mb-3 pb-3 h2">Frequently Asked Questions</h2>
+        </div>
+        <div class="col-12">
+          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="container">
+        <div class="row gy-3">
+          <div class="col-12" data-aos="fade-up">
+            <div class="accordion-item border mb-3 ">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+                  Non consectetur a erat nam at lectus urna duis?
+                </button>
+              </h3>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus
+                  laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border mb-3 ">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" aria-expanded="true" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Feugiat scelerisque varius morbi enim nunc faucibus?
+                </button>
+              </h3>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id
+                  interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
+                  pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa
+                  tincidunt dui.</div>
+              </div>
+            </div>
+            <div class="accordion-item border mb-3 ">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Dolor sit amet consectetur adipiscing elit pellentesque?
+
+
+                </button>
+              </h3>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
+                  Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
+                  tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at
+                  elementum eu facilisis sed odio morbi quis</div>
+              </div>
+            </div>
+            <div class="accordion-item border mb-3 ">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree1" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+
+
+                </button>
+              </h3>
+              <div id="flush-collapseThree1" class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id
+                  interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
+                  pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa
+                  tincidunt dui.</div>
+              </div>
+            </div>
+            <div class="accordion-item border mb-3 ">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree2" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Tempus quam pellentesque nec nam aliquam sem et tortor?
+
+                </button>
+              </h3>
+              <div id="flush-collapseThree2" class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim
+                  suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit
+                  adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</div>
+              </div>
+            </div>
+            <div class="accordion-item border mb-3 ">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree3" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Perspiciatis quod quo quos nulla quo illum ullam?
+
+
+                </button>
+              </h3>
+              <div id="flush-collapseThree3" class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non
+                  sed in suscipit sequi. Distinctio ipsam dolore et.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </section>
+  <!-- <section>===15===</section> -->
+  <section class="sec-15" id="Contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center sec15-hed">
+            <h2 class="position-relative mb-3 pb-3">Contact</h2>
+            <p>
+              Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+              consectetur velit
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d229857.02723069058!2d-74.109815!3d40.70844900000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown.%20Conference%20Center!5e1!3m2!1sen!2sus!4v1739802336045!5m2!1sen!2sus"
+      width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade" class></iframe>
+
+
+
+    <div class="container px-4 text-center">
+      <div class="row gx-5 pt-5 pb-5">
+        <div class="col-6 ">
+          <div class="row gy-3 gx-4">
+            <div class="col-12    ">
+              <div class="text-center shadow-sm p-3 sec15-box">
+                <i class="bi bi-geo-alt p-2"></i>
+                <h3 class="pt-4">Address</h3>
+                <p>A108 Adam Street, New York, NY 535022</p>
+              </div>
+            </div>
+            <div class="col-6   ">
+              <div class="text-center shadow-sm p-3 sec15-box">
+                <i class="bi bi-telephone p-2 "></i>
+                <h3 class="pt-4">Cull Us</h3>
+                <p>+1 5589 55488 55</p>
+              </div>
+            </div>
+            <div class="col-6  ">
+              <div class="text-center shadow-sm p-3 sec15-box">
+                <i class="bi bi-envelope p-2 "></i>
+                <h3 class="pt-4">Email Us</h3>
+                <p>info@example.com</p>
+              </div>
+
+
+
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-6 shadow-sm">
+          <form action="" class="form-control border-0 needs-validation">
+            <div class="row gy-4 gx-3">
+              <div class="col-6">
+                <input type="text" class="form-control mb-4" placeholder="your Name" name="" id="" required>
+              </div>
+              <div class="col-6">
+                <input type="email" class="form-control mb-4" placeholder="your Email" name="" id="" required>
+
+              </div>
+              <div class="col-12">
+                <input type="text" class="form-control mb-4" placeholder="Subject" name="" id="" required>
+
+              </div>
+              <div class="col-12">
+                <textarea class="form-control sec15-tex" name="message" rows="4" placeholder="Message"
+                  required></textarea>
+                <!-- <textarea name="" class="form-control mb-4 " id="" placeholder="message" required> </textarea> -->
+              </div>
+              <div class="col-12 text-center"><button class="btn" type="submit">Send Message</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+  </section>
+  <!-- <footer>======</footer> -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-4 border">
+          <a href="" class="d-flex align-items-center logo">
+            <span>Medicio</span>
+          </a>
+
+          <div class="foot-cap">
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p><strong>Phone:</strong><span> +1 5589 55488 55</span></p>
+            <p><strong>Email:</strong><span> info@example.com</span></p>
+
+          </div>
+          <div class="-foot-icon">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-2 border">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About us</a> </li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Terms of service</a> </li>
+            <li><a href="">Privacy policy</a> </li>
+          </ul>
+        </div>
+        <div class="col-2 border">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="">Web Design</a></li>
+            <li><a href="">Web Development</a></li>
+            <li><a href="">Product Management</a></li>
+            <li><a href="">Marketing</a></li>
+            <li><a href="">Graphic Design</a></li>
+          </ul>
+        </div>
+        <div class="col-2 border">
+          <h4>Hic solutasetp</h4>
+          <ul>
+            <li><a href="">Molestiae accusamus iure</a></li>
+            <li><a href="">Excepturi dignissimos</a></li>
+            <li><a href="">Suscipit distinctio</a></li>
+            <li><a href="">Dilecta</a></li>
+            <li><a href="">Sit quas consectetur</a></li>
+          </ul>
+        </div>
+        <div class="col-2 border">
+          <h4>Nobis illum</h4>
+          <ul>
+            <li><a href="">Ipsam</a></li>
+            <li><a href="">Laudantium dolorum</a></li>
+            <li><a href="">Dinera</a></li>
+            <li><a href="">Trodelas</a></li>
+            <li><a href="">Flexo</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <a href="#hed" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center ">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+  <script src="counter/countMe/countMe.min.js"></script>
+  <script>
+    (() => {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })(
+    )
+
+    $(document).ready(function () {
+      $('.slider4').bxSlider({
+        slideWidth: 370,
+        minSlides: 2,
+        maxSlides: 3,
+        moveSlides: 1,
+        slideMargin: 10,
+        auto: true,
+
+      });
+
+      $('.slider5').bxSlider({
+        slideWidth: 270,
+        minSlides: 5,
+        maxSlides: 8,
+        moveSlides: 1,
+        slideMargin: 10,
+        auto: true,
+        type: 'loop',
+        perPage: 3,
+        focus: 'center',
+
+        onSliderLoad: function () {
+        console.log(c);
+        let x = $(".sec12-img[aria-hidden='false']");
+        x[2].style.border = '2px solid black';
+        x[2].style.transform = 'scale(1.3)'
+      },
+        onSlideAfter: function () {
+          $(".sec12-img[aria-hidden='false']").removeClass("borderSlide")
+          let data = Math.floor($(".bx-clone").length / 2);
+
+          $(".bx-clone").eq(data).addClass("borderSlide")
+          let x = $(".sec12-img[aria-hidden='false']");
+          console.log(x.length)
+          for (let i = 0; i < x.length; i++)
+           console.log(x[2]);
+          if (i == 2) {
+            x[2].style.border = '2px solid black';
+            // x[2].style.transform = 'scale(1.3)'
+
+          } else {
+            x[i].style.border = 'none ';
+            x[2].style.transform = 'scale(1)'
+            console.log(x[i]);
+
+          }
+
+        },
+
+      });
+      
+    $(' .spc').countMe(40, 30);
+    $('.spc1').countMe(40, 50);
+    $('.spc2').countMe(40, 100);
+    $('.spc3').countMe(40, 5);
+
+    }); 
+  </script>
+  <!-- <script src="../js/bootstrap.bundle.min.js"></script> -->
+  <!-- <script src="js/script.js"></script> -->
+</body>
+
+</html>
