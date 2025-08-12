@@ -1,0 +1,32 @@
+#root{
+    background-image: url(img/vecteezy_northern-lights-a-bright-glow-on-a-black-background_30205965.jpg);
+    
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    background-attachment: fixed;
+}
+.he{
+    position: fixed !important;
+    // background-color: red !important;
+    top: calc(74px);
+    height: 100%;
+  }
+  .main{
+    width: 80%;
+    margin-top: calc(74px);
+
+}
+.head{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:95 ;
+}
+.drop1{
+    z-index: -1;
+}
+.modal{
+  z-index: 99;  
+}
