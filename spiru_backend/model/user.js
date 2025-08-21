@@ -24,7 +24,6 @@ const UserSchema = new mongoose.Schema(
     },
     phone:{
       type:String,
-      reqiured:true
     },
     otp:{
       type:Number,

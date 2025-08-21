@@ -4,7 +4,7 @@ const { uservalidationAsyc } = require("../utils/validationsAsyc");
 
 const router = require("express").Router();
 
-router.post("/regester",authorization(["Admin"]) ,uservalidationAsyc("userSchema"), regesterUser);
+router.post("/regester",authorization(["Admin","User"]) ,uservalidationAsyc("userSchema"), regesterUser);
 router.post("/login",authorization(["Admin","User"]),uservalidationAsyc("userLoginSchema"), loginUser);
 router.post("/email_vatrfy",verifyeEmail);
 router.post("/otp_vatrfy",verifyeOtp);
