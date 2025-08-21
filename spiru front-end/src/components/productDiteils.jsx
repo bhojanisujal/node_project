@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Star, Plus, Minus, ShoppingCart, Heart, MessageCircle } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ProductFetchById } from '../redux/slices/productslice';
+import { addToCart, getCart } from '../redux/slices/addtocart'; // Import cart thunks
 import CustomerReviews from './CustomerReviews';
 import Bestseller from './Bestseller';
 import verifiedIcon from '../assets/global_icon_main.png';
@@ -19,8 +20,12 @@ const ProductDetails = () => {
   const { productId } = useParams();
   const dispatch = useDispatch();
   const { ProductData, isLoading, isError } = useSelector((state) => state.Product);
+  const { cartData, isLoading: cartLoading, isError: cartError } = useSelector((state) => state.cart); // Access cart state
   const BASE_URL = "http://localhost:4000";
   const FALLBACK_IMAGE = "https://placehold.co/400x400";
+
+  // Assume userId from auth state (replace with actual auth logic)
+  const userId = "user123"; // TODO: Replace with actual userId from auth context or Redux
 
   // Find the product from ProductData
   const product = ProductData.find((p) => p._id === productId);
@@ -62,7 +67,6 @@ const ProductDetails = () => {
     if (variant && variant.weightOptions && !selectedWeight) {
       setSelectedWeight(variant.weightOptions[0].label);
     } else if (product && !variant?.weightOptions) {
-      // Set a default weight if no variants exist
       setSelectedWeight(product.weight || "100g");
     }
   }, [variant, product, selectedWeight]);
@@ -76,16 +80,36 @@ const ProductDetails = () => {
     });
   };
 
-  // Placeholder for adding to cart
+  // Handle add to cart
   const handleAddToCart = () => {
-    console.log("Add to cart:", { productId: product?._id, quantity, selectedWeight });
-    // TODO: Implement cart logic using CartContext
+    if (!product || !variant) {
+      console.error("Product or variant not available");
+      return;
+    }
+
+    const cartItem = {
+      productId: product._id,
+      variantId: variant._id, // Assuming variant has an _id field
+      quantity,
+    };
+
+    dispatch(addToCart({ userId, items: [cartItem] }))
+      .unwrap()
+      .then(() => {
+        console.log("Item added to cart successfully");
+        // Refresh cart data
+        dispatch(getCart(userId));
+      })
+      .catch((error) => {
+        console.error("Failed to add to cart:", error);
+        // Optionally show error to user (e.g., toast notification)
+      });
   };
 
   // Placeholder for adding to wishlist
   const handleAddToWishlist = () => {
     console.log("Add to wishlist:", { productId: product?._id, productName: product?.productName });
-    // TODO: Implement wishlist logic using WishlistContext
+    // TODO: Implement wishlist logic using WishlistContext or Redux
   };
 
   // Loading state
@@ -123,9 +147,9 @@ const ProductDetails = () => {
   const productImages = variant?.productImage?.map((img) => getImageUrl(img)) || [FALLBACK_IMAGE];
   const weightOptions = variant?.weightOptions || [];
   const hasVariants = weightOptions.length > 0;
-  const defaultPrice = product?.price || 319; // Default price if no variants
-  const defaultOriginalPrice = product?.originalPrice || 399; // Default original price if no variants
-  const defaultDiscount = product?.discount || "20% OFF"; // Default discount if no variants
+  const defaultPrice = product?.price || 319;
+  const defaultOriginalPrice = product?.originalPrice || 399;
+  const defaultDiscount = product?.discount || "20% OFF";
   const selectedOption = hasVariants
     ? weightOptions.find((option) => option.label === selectedWeight) || weightOptions[0]
     : { label: selectedWeight, price: defaultPrice, original: defaultOriginalPrice, discount: defaultDiscount };
@@ -294,26 +318,11 @@ const ProductDetails = () => {
               </div>
             </div>
 
-              {/* <div className="grid grid-cols-2 gap-3 mb-4">
-                {(product?.benefits?.list || [
-                  { icon: '⚡', text: 'Enhances Energy & Stamina' },
-                  { icon: '💪', text: 'Boosts Strength & Power' },
-                  { icon: '🧠', text: 'Improves Focus & Mental Clarity' },
-                  { icon: '🧬', text: 'Supports Male Vitality' },
-                ]).map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-2 text-[#696969]">
-                    <span className="text-lg">{benefit.icon}</span>
-                    <span className="text-sm font-medium">{benefit.text}</span>
-                  </div>
-                ))}
-              </div> */}
-
             <div className="mb-4">
               <span className="text-gray-700 font-semibold">WEIGHT: </span>
               <span className="text-green-600 font-bold">{selectedWeight}</span>
             </div>
 
-            {/* Show variants only if they exist */}
             {hasVariants && (
               <div className="flex flex-wrap gap-2 p-2 rounded-md">
                 {weightOptions.map((option) => {
@@ -371,9 +380,10 @@ const ProductDetails = () => {
               <button
                 className="bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-4 rounded-full"
                 onClick={handleAddToCart}
+                disabled={cartLoading}
               >
                 <ShoppingCart className="inline-block w-5 h-5 mr-2" />
-                ADD TO CART
+                {cartLoading ? 'Adding...' : 'ADD TO CART'}
               </button>
 
               <button
@@ -383,6 +393,12 @@ const ProductDetails = () => {
                 <Heart className="w-5 h-5 text-green-700 hover:text-red-500" />
               </button>
             </div>
+
+            {cartError && (
+              <div className="text-red-500 text-sm mb-4">
+                Error: {cartError}
+              </div>
+            )}
 
             <button className="w-full sm:w-[60%] bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-6 rounded-full mb-6 mx-auto block">
               BUY IT NOW

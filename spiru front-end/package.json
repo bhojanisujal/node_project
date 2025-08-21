@@ -23,6 +23,7 @@
     "react-router-dom": "^7.6.2",
     "router": "^2.2.0",
     "sass": "^1.89.2",
+    "sweetalert2": "^11.22.4",
     "swiper": "^11.2.8",
     "tailwindcss": "^4.1.10"
   },
