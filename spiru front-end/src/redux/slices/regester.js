@@ -2,10 +2,10 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const registerUser = createAsyncThunk(
-  "auth/register",
+  "auth/regester",
   async ({ firstName, lastName, email, password, phone }, { rejectWithValue }) => {
     try {
-      const response = await axios.post("http://localhost:4000/api/auth/register", {
+      const response = await axios.post("http://localhost:4000/api/auth/regester", {
         firstName,
         lastName,
         email,
@@ -14,7 +14,7 @@ export const registerUser = createAsyncThunk(
       });
       return response.data;
     } catch (error) {
-      return rejectWithValue(error.response?.data?.message || "Failed to register user");
+      return rejectWithValue(error.response?.data?.message || "Failed to regester user");
     }
   }
 );

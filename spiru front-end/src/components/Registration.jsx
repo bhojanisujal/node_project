@@ -2,21 +2,22 @@ import React, { useState } from "react";
 import { X } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { registerUser, resetRegistration } from "../redux/slices/registr";
+import { registerUser, resetRegistration } from "../redux/slices/regester";
 import Swal from "sweetalert2";
+import { PiGenderNonbinaryThin } from "react-icons/pi";
 
 const Register = ({ isOpen, onClose, onLoginClick }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const authState = useSelector((state) => state.auth || {});
-  const { isLoading = false, isError = null, isRegistered = false, userData = null } = authState;
+  const { isLoading = false, isError = null, isRegistered = false } = authState;
 
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
-    
+    phone: "",
   });
 
   const handleChange = (e) => {
@@ -36,27 +37,33 @@ const Register = ({ isOpen, onClose, onLoginClick }) => {
       return;
     }
     if (form.password.length < 3) {
-    //   window.alert("Password must be at least . . 3 . . characters long");
-        Swal.fire({
-    icon: "error",
-    title: "Oops...",
-    text: "Password must be at least  3  characters long",
-    //   footer: '<a href="#">Why do I have this issue?</a>'
-    });
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password must be at least 3 characters long",
+      });
       return;
     }
 
     dispatch(registerUser(form))
       .unwrap()
       .then(() => {
-        window.alert("Registration successful! Please verify your email with the OTP sent.");
-        navigate("/verify-otp", { state: { email: form.email, userId: userData?._id } });
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Registration successful! You can now log in.",
+        });
+        navigate("/login"); // Redirect to login page after successful registration
         dispatch(resetRegistration());
         setForm({ firstName: "", lastName: "", email: "", password: "", phone: "" });
         onClose();
       })
       .catch((error) => {
-        window.alert(`Registration failed: ${error}`);
+        Swal.fire({
+          icon: "error",
+          title: "Registration Failed",
+          text: `Registration failed: ${error}`,
+        });
       });
   };
 
@@ -64,8 +71,9 @@ const Register = ({ isOpen, onClose, onLoginClick }) => {
     <>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-white/40 z-40 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
+        className={`fixed inset-0 bg-white/40 z-40 transition-opacity duration-300 ${
+          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
         onClick={onClose}
       ></div>
 
@@ -73,7 +81,7 @@ const Register = ({ isOpen, onClose, onLoginClick }) => {
       <div
         className={`fixed top-0 right-0 w-full max-w-sm bg-white h-full shadow-lg p-6 z-50 
           transform transition-transform duration-700 ease-in-out
-        ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+          ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         {/* Close Button */}
         <button
@@ -86,12 +94,11 @@ const Register = ({ isOpen, onClose, onLoginClick }) => {
         <h2 className="text-xl font-semibold mb-4">REGISTER</h2>
 
         <div className="border-t-1 border-gray-300 pt-6 text-center text-sm text-gray-500 
-        flex flex-wrap justify-center sm:justify-start">
-        </div>
+        flex flex-wrap justify-center sm:justify-start"></div>
 
         {isError && <p className="text-red-500 text-sm mb-4">{isError}</p>}
         {isRegistered && (
-          <p className="text-green-500 text-sm mb-4">Registration successful! Check your email for OTP.</p>
+          <p className="text-green-500 text-sm mb-4">Registration successful! You can now log in.</p>
         )}
 
         <form onSubmit={handleSubmit}>
@@ -134,6 +141,26 @@ const Register = ({ isOpen, onClose, onLoginClick }) => {
               peer-focus:text-green-600"
             >
               Last Name
+            </label>
+          </div>
+          {/* Phone */}
+          <div className="relative mb-4">
+            <input
+              type="text"
+              name="phone"
+              value={form.phone}
+              onChange={handleChange}
+              placeholder=" "
+              className="peer w-full border border-gray-300 rounded px-3 pt-6 pb-1 focus:outline-none focus:ring-2 focus:ring-green-600"
+              required
+            />
+            <label
+              className="absolute left-3 top-1.5 text-sm text-gray-500 transition-all 
+              peer-placeholder-shown:top-4 peer-placeholder-shown:text-base 
+              peer-placeholder-shown:text-gray-400 peer-focus:top-1.5 peer-focus:text-sm 
+              peer-focus:text-green-600"
+            >
+              Phone
             </label>
           </div>
 
@@ -202,10 +229,11 @@ const Register = ({ isOpen, onClose, onLoginClick }) => {
               className="text-green-700 hover:underline"
               onClick={onLoginClick}
             >
-              Login here
+              Login here  
             </button>
           </div>
         </form>
+        <PiGenderNonbinaryThin></PiGenderNonbinaryThin>
       </div>
     </>
   );

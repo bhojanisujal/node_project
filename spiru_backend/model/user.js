@@ -32,9 +32,6 @@ const UserSchema = new mongoose.Schema(
     otpexpirAt:{
       type:Date,
       default:Date.now
-    },Isverify:{
-      type:Boolean,
-      default:false 
     },role:{
       type:String,
       enum:["Admin","User"],
