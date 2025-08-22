@@ -76,11 +76,7 @@ const Transformation = () => {
                     className="absolute inset-0 z-10 cursor-pointer"
                     onClick={() => openModal(index)}
                   />
-                  <div className="absolute top-2 left-2 bg-black text-white text-xs py-1 
-                  rounded-full flex items-center">
-                    <i className="fas fa-eye mr-1" />
-                    {product.views}
-                  </div>
+                 
                 </div>
 
                 <div className="absolute bottom-[5px] left-0 w-full px-2 z-10 pointer-events-none">

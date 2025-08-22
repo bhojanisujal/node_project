@@ -81,32 +81,37 @@ const regesterUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
+
   try {
-    // console.log(req.user, "req.user");
+    // Validate input
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Email and password are required",
+      });
+    }
 
-    let loginUser = await User.findOne({ email, Isverify: true });
-    if (!(email && password))
+    // Find user
+    const loginUser = await User.findOne({ email }); // Adjust field name
+    console.log("User query result:", loginUser); // Debug log
+    if (!loginUser) {
       return res.status(404).json({
         success: false,
-        meassage: "user not found",
+        message: "Email or Password invalid",
       });
+    }
 
-    const ispassword = await bcrypt.compare(password, loginUser.password);
-
-    if (!ispassword)
-      return res.status(404).json({
-        success: false, 
-        meassage: "Email or Password invalid",
-      });
-
-    if (!loginUser)
-      return res.status(404).json({
+    // Compare passwords
+    const isPasswordValid = await bcrypt.compare(password, loginUser.password);
+    console.log("Password valid:", isPasswordValid); // Debug log
+    if (!isPasswordValid) {
+      return res.status(401).json({
         success: false,
-        meassage: "Email or Password invalid",
+        message: "Email or Password invalid",
       });
-    // console.log(loginUser, "loginUser");
+    }
 
-
+    // Generate JWT token
     const token = jwt.sign(
       {
         userId: loginUser._id,
@@ -116,109 +121,32 @@ const loginUser = async (req, res) => {
         phone: loginUser.phone,
         role: loginUser.role,
       },
-      "sujal199",
-      { expiresIn: "101d" }
+      process.env.JWT_SECRET || "sujal199",
+      { expiresIn: "1d" }
     );
+
     return res
       .status(200)
       .cookie("accessToken", token, {
         maxAge: 1000 * 60 * 60 * 24, // 1 day
         httpOnly: true,
         sameSite: "none",
-        secure: true
+        secure: true,
       })
       .json({
         success: true,
-        token: token,
+        token,
         message: "Logged in successfully",
       });
   } catch (error) {
+    console.error("Error in loginUser:", error); // Debug log
     return res.status(500).json({
       success: false,
-      meassage: error.message,
+      message: error.message || "Internal server error",
     });
   }
 };
 
-const verifyeEmail = async (req, res) => {
-  const { email } = req.body;
-
-
-  try {
-    const user = await User.findOne({ email });
-    if (!user)
-      return res.status(404).json({
-        success: false,
-        meassage: "User not found",
-      });
-
-
-    const otp = otpvatify();
-    const otpexpirAt = Date.now() + 1000 * 60;
-
-    const fainaklotp = htmlfile.replace("${otp}", otp);
-    //  console.log(otp)
-    let mailOptions = {
-      from: "rajputsujal719@gmail.com",
-      to: "traxxstarneo@gmail.com",
-      subject: "Sending Email using Node.js",
-      html: fainaklotp,
-    };
-
-    transporter.sendMail(mailOptions, function (error, info) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("Email sent: " + info.response);
-      }
-    });
-
-    await User.updateOne({ _id: user._id }, { $set: { otp, otpexpirAt } });
-
-    return res.status(200).json({
-      success: true,
-      message: "Email varify successfully..!",
-    });
-  } catch (error) {
-    return res.status(500).json({
-      success: false,
-      meassage: error.message,
-    });
-  }
-};
-
-const verifyeOtp = async (req, res) => {
-  try {
-    const { otp, userId: _id, type } = req.body;
-    const user = await User.findOne({
-      _id,
-      otp,
-      otpexpirAt: { $gt: Date.now() },
-    });
-    if (!user)
-      return res.status(404).json({
-        success: false,
-        meassage: "Invalid otp or otpexpir..!",
-      });
-
-    const Isverify = type == "resetpassword" ? user.Isverify : true;
-
-    await User.updateOne(
-      { _id: user._id },
-      { $set: { otp, otpexpirAt: Date.now() }, Isverify }
-    );
-
-    return res.status(200).json({
-      success: true,
-      meassage: "Otp verify successfull..!",
-    });
-  } catch (error) {
-    return res.status(500).json({
-      success: false,
-      meassage: error.message,
-    });
-  }
-};
 
 const resetpassword = async (req, res) => {
   const { password, userId: _Id } = req.body;
@@ -300,8 +228,6 @@ const changePssword = async (req, res) => {
 module.exports = {
   regesterUser,
   loginUser,
-  verifyeEmail,
-  verifyeOtp,
   resetpassword,
   profile,
   changePssword,

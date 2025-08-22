@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Star, Plus, Minus, ShoppingCart, Heart, MessageCircle } from 'lucide-react';
+import { Star, Plus, Minus, ShoppingCart, Heart } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ProductFetchById } from '../redux/slices/productslice';
-import { addToCart, getCart } from '../redux/slices/addtocart'; // Import cart thunks
+import { addToCart, getCart } from '../redux/slices/addtocart';
+import { jwtDecode } from 'jwt-decode';
 import CustomerReviews from './CustomerReviews';
 import Bestseller from './Bestseller';
 import verifiedIcon from '../assets/global_icon_main.png';
+import Swal from 'sweetalert2';
 
 // Fallback for WhySpiruSwastha
 let WhySpiruSwastha = () => <div className="p-4 text-center text-gray-500">WhySpiruSwastha component not available</div>;
@@ -20,12 +22,28 @@ const ProductDetails = () => {
   const { productId } = useParams();
   const dispatch = useDispatch();
   const { ProductData, isLoading, isError } = useSelector((state) => state.Product);
-  const { cartData, isLoading: cartLoading, isError: cartError } = useSelector((state) => state.cart); // Access cart state
+  const { cartData, isLoading: cartLoading, isError: cartError } = useSelector((state) => state.cart);
   const BASE_URL = "http://localhost:4000";
   const FALLBACK_IMAGE = "https://placehold.co/400x400";
 
-  // Assume userId from auth state (replace with actual auth logic)
-  const userId = "user123"; // TODO: Replace with actual userId from auth context or Redux
+  // Get userId from accessToken in localStorage
+  const getUserIdFromToken = () => {
+    const token = localStorage.getItem('accessToken');
+    if (!token) {
+      console.warn('No accessToken found in localStorage');
+      return null;
+    }
+    try {
+      const decoded = jwtDecode(token);
+      return decoded.userId; // Assumes userId is in the JWT payload
+    } catch (error) {
+      console.error('Failed to decode accessToken:', error);
+      localStorage.removeItem('accessToken'); // Clear invalid token
+      return null;
+    }
+  };
+
+  const userId = getUserIdFromToken();
 
   // Find the product from ProductData
   const product = ProductData.find((p) => p._id === productId);
@@ -50,7 +68,6 @@ const ProductDetails = () => {
       .replace(/\\/g, "/")
       .replace(/^\/+|\/+$/g, "");
     const url = cleanPath ? `${BASE_URL}/product/${cleanPath}` : FALLBACK_IMAGE;
-    console.log(`Image URL for path "${path}": ${url}`);
     return url;
   };
 
@@ -81,33 +98,72 @@ const ProductDetails = () => {
   };
 
   // Handle add to cart
-  const handleAddToCart = () => {
-    if (!product || !variant) {
-      console.error("Product or variant not available");
-      return;
-    }
+ const handleAddToCart = () => {
+  if (!userId) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Not Logged In',
+      text: 'Please log in to add items to your cart.',
+      confirmButtonText: 'Go to Login',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = '/login';
+      }
+    });
+    return;
+  }
 
-    const cartItem = {
-      productId: product._id,
-      variantId: variant._id, // Assuming variant has an _id field
-      quantity,
-    };
+  if (!product || !variant || !product._id || !variant._id) {
+    console.error("Product or variant data is incomplete", { product, variant });
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Product data is not available or incomplete.',
+    });
+    return;
+  }
 
-    dispatch(addToCart({ userId, items: [cartItem] }))
-      .unwrap()
-      .then(() => {
-        console.log("Item added to cart successfully");
-        // Refresh cart data
-        dispatch(getCart(userId));
-      })
-      .catch((error) => {
-        console.error("Failed to add to cart:", error);
-        // Optionally show error to user (e.g., toast notification)
-      });
+  const cartItem = {
+    productId: product._id,
+    variantId: variant._id,
+    quantity: quantity,
   };
+
+  dispatch(addToCart({ userId, items: [cartItem] }))
+    .unwrap()
+    .then(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Item added to cart successfully!',
+      });
+      dispatch(getCart(userId)); // Refresh cart data
+    })
+    .catch((error) => {
+      console.error("Failed to add to cart:", error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.message || 'Failed to add item to cart.',
+      });
+    });
+};
 
   // Placeholder for adding to wishlist
   const handleAddToWishlist = () => {
+    if (!userId) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Not Logged In',
+        text: 'Please log in to add items to your wishlist.',
+        confirmButtonText: 'Go to Login',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = '/login';
+        }
+      });
+      return;
+    }
     console.log("Add to wishlist:", { productId: product?._id, productName: product?.productName });
     // TODO: Implement wishlist logic using WishlistContext or Redux
   };
@@ -427,18 +483,6 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="fixed bottom-6 left-6 z-50">
-        <a
-          href="https://wa.me/919999999999"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg shadow-green-200 transition duration-300"
-          aria-label="Chat on WhatsApp"
-        >
-          <MessageCircle className="w-6 h-6" />
-        </a>
       </div>
 
       <WhySpiruSwastha />

@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { PiGenderNonbinaryThin } from "react-icons/pi";
 
 // Action to fetch all products
 export const ProductFetch = createAsyncThunk(
@@ -51,6 +52,7 @@ const ProductSlice = createSlice({
         state.isLoading = false;
         state.isError = action.payload;
       })
+      
       // Handle ProductFetchById
       .addCase(ProductFetchById.pending, (state) => {
         state.isLoading = true;
